@@ -10,7 +10,7 @@ gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 cars = carClassifier.detectMultiScale(gray, 1.4, 2)
 
-if cars == ():
+if len(cars) == 0:
     print("No cars found")
 else:
     for (x, y, w, h) in cars:

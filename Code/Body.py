@@ -10,7 +10,8 @@ img = cv2.imread(f'images/{fileName}')
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 bodies = fullBodyClassifier.detectMultiScale(gray, 1.2, 3)
-if bodies == ():
+
+if len(bodies) == 0:
     print("No bodies found")
 else:
     for (x, y, w, h) in bodies:
