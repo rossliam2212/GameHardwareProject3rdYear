@@ -8,7 +8,7 @@ eyeClassifierFile = 'haarcascade_eye.xml'
 faceClassifier = cv2.CascadeClassifier(f'cascadeClassifiers/{faceClassifierFile}')
 eyeClassifier = cv2.CascadeClassifier(f'cascadeClassifiers/{eyeClassifierFile}')
 
-fileName = 'erin.JPG'
+fileName = 'tommy.JPG'
 img = cv2.imread(f'images/{fileName}')
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
@@ -20,7 +20,8 @@ if len(faces) == 0:
     print("No Face Found")
 else:
     for (x, y, w, h) in faces:
-        cv2.rectangle(img, (x, y), (x + w, y + h), (127, 0, 255), 2)
+        # cv2.rectangle(img, (x, y), (x + w, y + h), (127, 0, 255), 2)
+        cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
         cv2.imshow('img', img)
         # cv2.waitKey(0)
 

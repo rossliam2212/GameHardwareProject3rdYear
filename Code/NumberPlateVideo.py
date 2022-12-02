@@ -5,7 +5,7 @@ import numpy as np
 numberPlateClassifierFile = 'haarcascade_russian_plate_number.xml'
 numberPlateClassifier = cv2.CascadeClassifier(f'cascadeClassifiers/{numberPlateClassifierFile}')
 
-fileName = ''
+fileName = 'numberPlateVid.mp4'
 cap = cv2.VideoCapture(f'videos/{fileName}')
 
 while cap.isOpened():

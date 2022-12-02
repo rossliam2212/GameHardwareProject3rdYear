@@ -5,7 +5,7 @@ fullBodyClassifierFile = 'haarcascade_fullbody.xml'
 
 fullBodyClassifier = cv2.CascadeClassifier(f'cascadeClassifiers/{fullBodyClassifierFile}')
 
-fileName = 'b992.JPG'
+fileName = 'griezmann.jpg'
 img = cv2.imread(f'images/{fileName}')
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 

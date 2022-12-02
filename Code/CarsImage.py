@@ -4,7 +4,7 @@ import numpy as mp
 carClassifierFile = 'haarcascade_car.xml'
 carClassifier = cv2.CascadeClassifier(f'cascadeClassifiers/{carClassifierFile}')
 
-fileName = 'cars.jpeg'
+fileName = 'chevelle71.jpg'
 img = cv2.imread(f'images/{fileName}')
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
