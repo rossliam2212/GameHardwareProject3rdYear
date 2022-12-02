@@ -7,13 +7,13 @@ smileClassifierFile = 'haarcascade_smile.xml'
 faceClassifier = cv2.CascadeClassifier(f'cascadeClassifiers/{faceClassifierFile}')
 smileClassifier = cv2.CascadeClassifier(f'cascadeClassifiers/{smileClassifierFile}')
 
-fileName = 'erin5.JPG'
+fileName = 'budapest.JPG'
 img = cv2.imread(f'images/{fileName}')
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 faces = faceClassifier.detectMultiScale(gray, 1.3, 5)
 
-if faces == ():
+if len(faces) == 0:
     print("No faces found")
 else:
     for (x, y, w, h) in faces:
@@ -25,7 +25,7 @@ else:
         smiles = smileClassifier.detectMultiScale(roi_gray)
 
         for (sx, sy, sw, sh) in smiles:
-            cv2.rectangle(roi_color, (sx, sy), ((sx + sw), (sy + sh)), (0, 0, 255), 2)
+            cv2.rectangle(roi_color, (sx, sy), ((sx + sw), (sy + sh)), (255, 0, 0), 2)
             cv2.imshow('img', img)
 
     cv2.waitKey(0)

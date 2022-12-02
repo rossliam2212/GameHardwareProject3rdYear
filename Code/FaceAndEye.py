@@ -38,6 +38,6 @@ else:
     faceClassifierOutput = faceClassifierFile.split(".")
     eyeClassifierOutput = eyeClassifierFile.split(".")
     outputFileName = fileName.split('.')
-    cv2.imwrite(f'outputImages/BLACK{outputFileName[0]}({faceClassifierOutput[0]}&{eyeClassifierOutput[0]}).png', img)
+    cv2.imwrite(f'outputImages/{outputFileName[0]}({faceClassifierOutput[0]}&{eyeClassifierOutput[0]}).png', img)
 
     cv2.destroyAllWindows()
