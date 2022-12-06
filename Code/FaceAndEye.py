@@ -1,14 +1,14 @@
 import numpy as np
 import cv2
 
-faceClassifierFile = 'lbpcascade_frontalface_improved.xml'
-# faceClassifierFile = 'haarcascade_frontalface_default.xml'
+# faceClassifierFile = 'lbpcascade_frontalface_improved.xml'
+faceClassifierFile = 'haarcascade_frontalface_default.xml'
 eyeClassifierFile = 'haarcascade_eye.xml'
 
 faceClassifier = cv2.CascadeClassifier(f'cascadeClassifiers/{faceClassifierFile}')
 eyeClassifier = cv2.CascadeClassifier(f'cascadeClassifiers/{eyeClassifierFile}')
 
-fileName = 'erin.JPG'
+fileName = 'jake.jpg'
 img = cv2.imread(f'images/{fileName}')
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 

@@ -4,7 +4,7 @@ import cv2
 numberPlateClassifierFile = 'haarcascade_russian_plate_number.xml'
 numberPlateClassifier = cv2.CascadeClassifier(f'cascadeClassifiers/{numberPlateClassifierFile}')
 
-fileName = 'numberPlate3.jpg'
+fileName = 'golf2.jpg'
 img = cv2.imread(f'images/{fileName}')
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
