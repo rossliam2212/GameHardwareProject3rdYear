@@ -2,8 +2,7 @@ import cv2
 import time
 import numpy as np
 
-# carClassifierFile = 'haarcascade_car.xml'
-carClassifierFile = 'cars.xml'
+carClassifierFile = 'haarcascade_car.xml'
 carClassifier = cv2.CascadeClassifier(f'cascadeClassifiers/{carClassifierFile}')
 
 fileName = 'carsOnHighway.mp4'
@@ -15,7 +14,7 @@ while cap.isOpened():
     ret, frame = cap.read()
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-    cars = carClassifier.detectMultiScale(gray, 1.4, 2)
+    cars = carClassifier.detectMultiScale(gray, 1.1, 2)
 
     for (x, y, w, h) in cars:
         cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 255), 2)
