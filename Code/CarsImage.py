@@ -4,14 +4,11 @@ import numpy as np
 carClassifierFile = 'haarcascade_car.xml'
 carClassifier = cv2.CascadeClassifier(f'cascadeClassifiers/{carClassifierFile}')
 
-fileName = 'cars.jpeg'
+fileName = 'cars2.jpg'
 img = cv2.imread(f'images/{fileName}')
 
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-blur = cv2.GaussianBlur(gray, (5, 5), 0)
-dilated = cv2.dilate(blur, np.ones((3, 3)))
-
-cars = carClassifier.detectMultiScale(dilated, 1.1, 2)
+cars = carClassifier.detectMultiScale(gray, 1.1, 2)
 
 if len(cars) == 0:
     print("No cars found")
@@ -25,8 +22,5 @@ else:
     # Outputting the image with the detections
     outputFileName = fileName.split('.')
     carClassifierOutput = carClassifierFile.split(".")
-    cv2.imwrite(f'outputImages/cars/TEST{outputFileName[0]}({carClassifierOutput[0]}).png', img)
-
-    cv2.destroyAllWindows()
-
+    cv2.imwrite(f'outputImages/cars/{outputFileName[0]}({carClassifierOutput[0]}).png', img)
 
